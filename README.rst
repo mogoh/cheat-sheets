@@ -11,7 +11,7 @@ For rendering one can use rst2pdf
 
 Rendering
 ---------
-
+run 
 
 
 .. _`GIT Cheat Sheet`: git-cheat-sheet.rst 

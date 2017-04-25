@@ -1,6 +1,17 @@
 Cheat Sheets
 ============
 
-`GIT Cheat Sheet`_
+`Git Cheat Sheet`_
+
+Requirements
+------------
+For rendering one can use rst2pdf
+
+`sudo apt-get install rst2pdf`
+
+Rendering
+---------
+
+
 
 .. _`GIT Cheat Sheet`: git-cheat-sheet.rst 

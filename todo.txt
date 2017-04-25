@@ -1,0 +1,279 @@
+Maybe we want to add some of the stuff below:
+
+
+  * https://www.reddit.com/r/programming/comments/5uj9kc/git_cheat_sheet/
+  * https://services.github.com/resources/
+  * http://ohshitgit.com/
+
+
+[11:29:34] leonhard@webdev:ceres$ git
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+Allgemeine Git-Befehle, verwendet in verschiedenen Situationen:
+
+Arbeitsverzeichnis anlegen (siehe auch: git help tutorial)
+   clone      ein Repository in einem neuen Verzeichnis klonen
+   init       ein leeres Git-Repository erstellen oder ein bestehendes neuinitialisieren
+
+an aktuellen Änderungen arbeiten (siehe auch: git help everyday)
+   add        Dateiinhalte zum Commit vormerken
+   mv         eine Datei, ein Verzeichnis, oder eine symbolische Verknüpfung verschieben oder umbenennen
+   reset      aktuellen HEAD zu einem spezifizierten Zustand setzen
+   rm         Dateien im Arbeitsverzeichnis und vom Index löschen
+
+Historie und Status untersuchen (siehe auch: git help revisions)
+   bisect     Binärsuche verwenden, um den Commit zu finden, der einen Fehler verursacht hat
+   grep       Zeilen darstellen, die einem Muster entsprechen
+   log        Commit-Historie anzeigen
+   show       verschiedene Arten von Objekten anzeigen
+   status     den Zustand des Arbeitsverzeichnisses anzeigen
+
+Historie erweitern und bearbeiten
+   branch     Branches anzeigen, erstellen oder entfernen
+   checkout   Branches wechseln oder Dateien im Arbeitsverzeichnis wiederherstellen
+   commit     Änderungen in das Repository eintragen
+   diff       Änderungen zwischen Commits, Commit und Arbeitsverzeichnis, etc. anzeigen
+   merge      zwei oder mehr Entwicklungszweige zusammenführen
+   rebase     Wiederholtes Anwenden von Commits auf anderem Basis-Commit
+   tag        ein mit GPG signiertes Tag-Objekt erzeugen, auflisten, löschen oder verifizieren.
+
+mit anderen zusammenarbeiten (siehe auch: git help workflows)
+   fetch      Objekte und Referenzen von einem anderen Repository herunterladen
+   pull       Objekte von einem externen Repository anfordern und sie mit einem anderen Repository oder einem lokalen Branch zusammenführen
+   push       Remote-Referenzen mitsamt den verbundenen Objekten aktualisieren
+
+'git help -a' und 'git help -g' listet verfügbare Unterbefehle und
+einige Anleitungen zu Git-Konzepten auf. Benutzen Sie 'git help <Befehl>'
+oder 'git help <Konzept>', um mehr über einen spezifischen Befehl oder
+Konzept zu erfahren.
+
+
+===== Undo / Redo =====
+# Lists every thing you've done yet across all branches
+git reflog
+# Unodes all commits after HEAD@{index}
+git reset HEAD@{index}
+
+# Move the last commit from the [wrong-branch] to [correct-branch]
+git branch [correct-branch]
+# create [correct-branch] if nessesarry
+git checkout [correct-branch]
+# Go to [correct-branch]
+git cherry-pick [wrong-branch]
+# Get the commit from the [wrong-branch]; Only nessesarry if [correct-branch] is not new
+git checkout [wrong-branch]
+# Go to [wrong-branch]
+git reset HEAD~ --hard
+# Reste the wrong branch now
+git checkout [correct-branch]
+# Optional go now to [correct-branch]
+
+# fixing fatal: Could not parse object after unsuccessful revert
+git revert --quit
+
+
+
+
+
+    pulling for fast-forward only (eliminating a chance for unintended merging) git pull --ff-only
+
+    get a tagged branch gicheckout -b <BRANCH_NAME> <TAG_NAME>
+
+    list of all branches that haven't been merged to master git branch --no-merge master
+
+    enable more elaborate diff algorithm by default git config --global diff.algorithm histogram
+
+    list of all developers git shortlog -s -n -e
+
+    display graph of branches git log --decorate --graph --all --date=relative or git log --decorate --graph --all --oneline
+
+
+
+    viewing differences between current and other branch
+    git difftool -d BRANCH_NAME
+
+    viewing differences between current and stash
+    git difftool -d stash
+
+    viewing differences between several commits in a diff tool
+    git difftool -d HEAD@{2}...HEAD@{0}
+
+    view all global settings
+    git config --global -l
+
+
+deleting remote branch localy
+git branch -r -D <BRANCH_NAME> or to sync with the remote git fetch --all --prune
+deleting local branch
+git branch -d <BRANCH_NAME>
+
+    list actual remote branchs git ls-remote --heads origin
+
+    list all remote (fetched) branches git branch -r
+
+    list all local branches git branch -l
+
+    find to which branch a given commit belongs
+    git branch --contains <COMMIT>
+
+    updating from a forked repository git remote add upstream https://github.com/Microsoft/TypeScript.git git fetch upstream git rebase upstream/master
+
+
+git checkout -b LOCAL_BRANCH origin/REMOTE_BRANCH
+
+git fetch; git pull;
+
+git rebase origin/master
+
+git branch -D LOCAL_BRANCH_TO_DELETE
+
+git push origin :REMOTE_BRANCH_TO_DELETE
+
+git push --force origin MY_BRANCH:REMOTE_BRANCH \\erase the stupid shit i committed
+
+git rebase -i
+bisect
+
+git reset --soft HEAD~ - reset to previous commit, but stage the changes in the latest commit.
+git reset --keep HEAD~ - reset to previous commit, but don't reset the working directory, just change what 
+git reset HEAD~ - reset to previous commit, don't stage the changes, don't touch the working directory. 
+
+
+
+        <h2>Configure Tooling</h2>
+        <code>git config --global user.namie "[name]"</code>
+        <p>Sets the name you want attached to your commit transactions.</p>
+
+        <code>git init [project name]</code>
+        <p>Initilizes a new git repository.</p>
+
+        <code>git clone [URL]</code>
+        <p>Clones a Repository from [URL].</p>
+
+\section{Create a Repository}
+From scratch -- Create a new local repository \\ \texttt{\color{blue} git init [project name]}
+
+Download from an existing repository \\ \texttt{\color{blue} git clone myurl}
+
+\section{Observe your Repository}
+List new or modified files not yet
+committed \\ \texttt{\color{blue} git status}
+
+Show the changes to files not yet staged \\ \texttt{\color{blue} git diff}
+
+Show the changes to staged files \\ \texttt{\color{blue} git diff --cached}
+
+Show all staged and unstaged
+file changes \\ \texttt{\color{blue} git diff HEAD}
+
+Show the changes between two
+commit ids \\ \texttt{\color{blue} git diff commit1 commit2}
+
+List the change dates and authors
+for a file \\ \texttt{\color{blue} git blame [file]}
+
+Show the file changes for a commit
+id and/or file \\ \texttt{\color{blue} git show [commit]:[file]}
+
+Show full change history \\ \texttt{\color{blue} git log}
+
+Show change history for file/directory
+including diffs \\ \texttt{\color{blue} git log -p [file/directory]}
+
+
+\section{Working with Branches}
+List all local branches \\ \texttt{\color{blue} git branch}
+
+List all branches, local and remote \\ \texttt{\color{blue} git branch -av}
+
+Switch to a branch and update working directory \\ \texttt{\color{blue} git checkout mybranch}
+
+Create a new branch called newbranch \\ \texttt{\color{blue} git branch newbranch}
+
+Delete the branch called mybranch \\ \texttt{\color{blue} git branch -d mybranch}
+
+Merge brancha into branchb \\ \texttt{\color{blue} git checkout branchb\\git merge brancha}
+
+Tag the current commit \\ \texttt{\color{blue} git tag mytag}
+
+\section{Make a change}
+Stages the file, ready for commit \\ \texttt{\color{blue} git add [file]}
+
+Stage all changed files, ready for commit \\ \texttt{\color{blue} git add .}
+
+Commit all staged files to versioned history \\ \texttt{\color{blue} git commit -m “commit message”}
+
+Commit all your tracked files to
+versioned history \\ \texttt{\color{blue} git commit -am “commit message”}
+
+Unstages file, keeping the file changes \\ \texttt{\color{blue} git reset [file]}
+
+Revert everything to the last commit \\ \texttt{\color{blue} git reset --hard}
+
+\section{Synchronise}
+Get the latest changes from origin
+(no merge) \\ \texttt{\color{blue} git fetch}
+
+Fetch the latest changes from origin
+and merge \\ \texttt{\color{blue} git pull}
+
+Fetch the latest changes from origin
+and rebase \\ \texttt{\color{blue} git pull --rebase}
+
+Push local changes to the origin \\ \texttt{\color{blue} git push}
+
+\section{Finally!}
+When in doubt, use git help \\ \texttt{\color{blue} git command --help}
+
+Or visit \url{https://training.github.com/} for official GitHub training\section{Working with Branches}
+List all local branches \\ \texttt{\color{blue} git branch}
+
+List all branches, local and remote \\ \texttt{\color{blue} git branch -av}
+
+Switch to a branch and update working directory \\ \texttt{\color{blue} git checkout mybranch}
+
+Create a new branch called newbranch \\ \texttt{\color{blue} git branch newbranch}
+
+Delete the branch called mybranch \\ \texttt{\color{blue} git branch -d mybranch}
+
+Merge brancha into branchb \\ \texttt{\color{blue} git checkout branchb\\git merge brancha}
+
+Tag the current commit \\ \texttt{\color{blue} git tag mytag}
+
+\section{Make a change}
+Stages the file, ready for commit \\ \texttt{\color{blue} git add [file]}
+
+Stage all changed files, ready for commit \\ \texttt{\color{blue} git add .}
+
+Commit all staged files to versioned history \\ \texttt{\color{blue} git commit -m “commit message”}
+
+Commit all your tracked files to
+versioned history \\ \texttt{\color{blue} git commit -am “commit message”}
+
+Unstages file, keeping the file changes \\ \texttt{\color{blue} git reset [file]}
+
+Revert everything to the last commit \\ \texttt{\color{blue} git reset --hard}
+
+\section{Synchronise}
+Get the latest changes from origin
+(no merge) \\ \texttt{\color{blue} git fetch}
+
+Fetch the latest changes from origin
+and merge \\ \texttt{\color{blue} git pull}
+
+Fetch the latest changes from origin
+and rebase \\ \texttt{\color{blue} git pull --rebase}
+
+Push local changes to the origin \\ \texttt{\color{blue} git push}
+
+\section{Finally!}
+When in doubt, use git help \\ \texttt{\color{blue} git command --help}
+
+Or visit \url{https://training.github.com/} for official GitHub training
+\end{multicols*}
+\end{document}
+

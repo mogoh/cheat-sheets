@@ -164,7 +164,8 @@ Exclude temporary files and paths
   *.log
   temp-*
   build/        # All 'build'-directories
-  /rootdir/     # Only the 'rootdir' in the root of the git repository
+  /rootdir/     # Only the 'rootdir' in the root of the 
+                # git repository
 
 A text file named ``.gitignore`` suppresses accidental versioning of files and paths matching the specified patterns
 
@@ -228,6 +229,7 @@ About
 --------------------------------------------------------------------------------
 This Cheat Sheet can be found at https://github.com/mogoh/cheat-sheets/. Forks and pull requests are welcome.
 
+This Cheat Sheet is based on:
 
 * https://www.reddit.com/r/programming/comments/5uj9kc/git_cheat_sheet/
 * https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf

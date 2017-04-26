@@ -10,17 +10,21 @@ https://git-scm.com
 
 Configure Tooling
 --------------------------------------------------------------------------------
-Sets the name you want attached to your commit transactions
+Set the name you want attached to your commit transactions
 
 ``git config --global user.name [name]``
 
-Sets the email you want attached to your commit transactions
+Set the email you want attached to your commit transactions
 
 ``git config --global user.email [email address]``
 
-Enables helpful colorization of command line output
+Enable helpful colorization of command line output
 
 ``git config --global color.ui auto``
+
+View all global settings
+
+``git config --global -l``
 
 Create Repositories
 --------------------------------------------------------------------------------
@@ -34,9 +38,9 @@ Download a project and its entire version history
 
 ``git clone [url]``
 
-Observe your Repository
+Review History
 --------------------------------------------------------------------------------
-See what has changed
+Browse and inspect the evolution of project files
 
 List all new or modified files not yet committed
 
@@ -48,23 +52,67 @@ Show file differences not yet staged
 
 Show file differences between staging and the last file version
 
-``git diff --staged``
+``git diff --cached``
+
+Show all staged and unstaged
+``git diff HEAD``
+
+Show the changes between ``[a]`` and ``[b]``, where [a] and [b] can be branches or commits.
+
+``git diff [a] [b]``
+
+Lists version history for the current branch
+
+``git log``
+
+Lists version history for a file, including renames
+
+``git log --follow [file]``
+
+Output metadata and content changes of the specified [commit] (and [file])
+
+``git show [commit](:[file])``
+
+List every thing you've done yet across all branches
+
+``git reflog``
+
+List the change dates and authors for a file
+``git blame [file]``
+
+
+List all developers
+
+``git shortlog -s -n -e``
+
+Display a graph of branches 
+
+``git log --decorate --graph --all --date=relative``
+
+``git log --decorate --graph --all --oneline``
 
 Make Changes
 --------------------------------------------------------------------------------
 Review edits and craft a commit transaction
 
-Snapshots the file in preparation for versioning
+Snapshot the file in preparation for versioning
 
 ``git add [file]``
 
-Unstages the file, but preserve its contents
+Snapshot all changed files in preparation for versioning
+
+``git add .``
+
+Unstage file(s), but preserve its contents
 
 ``git reset [file]s``
 
-Records file snapshots permanently in version history
+Record file snapshots permanently in version history
 
 ``git commit -m "[descriptive message]"``
+
+Record all chaned files permanently in version history
+``git commit -am "[descriptive message]"``
 
 Group Changes
 --------------------------------------------------------------------------------
@@ -113,7 +161,7 @@ Exclude temporary files and paths
 ``.gitignore``::
 
   # This is a comment
-  *.log    
+  *.log
   temp-*
   build/        # All 'build'-directories
   /rootdir/     # Only the 'rootdir' in the root of the git repository
@@ -143,30 +191,6 @@ Restores the most recently stashed files
 Discards the most recently stashed changeset
 
 ``git stash drop``
-
-Review History
---------------------------------------------------------------------------------
-Browse and inspect the evolution of project files
-
-Lists version history for the current branch
-
-``git log``
-
-Lists version history for a file, including renames
-
-``git log --follow [file]``
-
-Shows content differences between two branches
-
-``git diff [first-branch]...[second-branch]``
-
-Outputs metadata and content changes of the specified commit
-
-``git show [commit]``
-
-List every thing you've done yet across all branches
-
-``git reflog``
 
 Redo Commits
 --------------------------------------------------------------------------------
@@ -200,8 +224,10 @@ Downloads bookmark history and incorporates changes
 
 ``git pull``
 
-Based on
+About
 --------------------------------------------------------------------------------
+This Cheat Sheet can be found at https://github.com/mogoh/cheat-sheets/. Forks and pull requests are welcome.
+
 
 * https://www.reddit.com/r/programming/comments/5uj9kc/git_cheat_sheet/
 * https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf

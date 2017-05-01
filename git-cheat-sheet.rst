@@ -225,6 +225,13 @@ Downloads bookmark history and incorporates changes
 
 ``git pull``
 
+Miscellaneous
+--------------------------------------------------------------------------------
+
+Time to go home. Just push everything. What could go wrong?
+
+``alias gityolo='git add . && git commit -m "`fortune`" && git push'``
+
 About
 --------------------------------------------------------------------------------
 This Cheat Sheet can be found at https://github.com/mogoh/cheat-sheets/. Forks and pull requests are welcome.

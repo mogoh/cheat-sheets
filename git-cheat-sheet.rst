@@ -4,7 +4,7 @@
 
 Install Git
 --------------------------------------------------------------------------------
-Git can be downloaded from [git-scm.com](https://git-scm.com).
+Git can be downloaded from `git-scm.com`_.
 
 Configure Tooling
 --------------------------------------------------------------------------------
@@ -89,9 +89,9 @@ Display a graph of branches
 
 ``git log --decorate --graph --all --oneline``
 
-Make Changes
+Staging and Committing
 --------------------------------------------------------------------------------
-Review edits and craft a commit transaction
+Changed files can be prepared for a commit with the `git add` command. After staged, files can be commited, so a snapshot is taken.
 
 Snapshot the file in preparation for versioning
 
@@ -110,11 +110,12 @@ Record file snapshots permanently in version history
 ``git commit -m "[descriptive message]"``
 
 Record all chaned files permanently in version history
+
 ``git commit -am "[descriptive message]"``
 
-Group Changes
+Branches
 --------------------------------------------------------------------------------
-Name a series of commits and combine completed efforts
+Name a series of commits and combine completed efforts.
 
 Lists all local branches in the current repository
 
@@ -237,7 +238,7 @@ Getting quick help to a specific command.
 
 ``git [command] --help``
 
-Read the offical documentation at _git-scm.com/docs.
+Read the offical documentation at `git-scm.com/docs`_. Or read the book `Pro Git`_.
 
 
 About
@@ -252,3 +253,5 @@ This Cheat Sheet is based on:
 * https://zeroturnaround.com/rebellabs/git-commands-and-best-practices-cheat-sheet/
 
 .. _git-scm.com/docs: https://git-scm.com/docs
+.. _git-scm.com: https://git-scm.com
+.. _Pro Git: https://git-scm.com/book/en/v2

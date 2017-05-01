@@ -237,7 +237,7 @@ Getting quick help to a specific command.
 
 ``git [command] --help``
 
-Read the offical documentation at [git-scm.com/docs](https://git-scm.com/docs).
+Read the offical documentation at _git-scm.com/docs.
 
 
 About
@@ -251,4 +251,4 @@ This Cheat Sheet is based on:
 * http://ohshitgit.com/
 * https://zeroturnaround.com/rebellabs/git-commands-and-best-practices-cheat-sheet/
 
-
+.. _git-scm.com/docs: https://git-scm.com/docs

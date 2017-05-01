@@ -2,18 +2,21 @@
 
 # Unodes all commits after HEAD@{index}
 git reset HEAD@{index}
-
 # Move the last commit from the [wrong-branch] to [correct-branch]
-git branch [correct-branch]
-# create [correct-branch] if nessesarry
+
+
 git checkout [correct-branch]
 # Go to [correct-branch]
+
 git cherry-pick [wrong-branch]
 # Get the commit from the [wrong-branch]; Only nessesarry if [correct-branch] is not new
+
 git checkout [wrong-branch]
 # Go to [wrong-branch]
+
 git reset HEAD~ --hard
 # Reste the wrong branch now
+
 git checkout [correct-branch]
 # Optional go now to [correct-branch]
 
@@ -47,7 +50,6 @@ git branch -d <BRANCH_NAME>
 
 git checkout -b LOCAL_BRANCH origin/REMOTE_BRANCH
 
-git fetch; git pull;
 
 git rebase origin/master
 
@@ -66,14 +68,7 @@ git reset HEAD~ - reset to previous commit, don't stage the changes, don't touch
 
 
 
-        <h2>Configure Tooling</h2>
-        <code>git config --global user.namie "[name]"</code>
         <p>Sets the name you want attached to your commit transactions.</p>
-
-\section{Observe your Repository}
-List new or modified files not yet
-committed \\ \texttt{\color{blue} git status}
-
 
 \section{Working with Branches}
 List all local branches \\ \texttt{\color{blue} git branch}
@@ -94,25 +89,19 @@ Unstages file, keeping the file changes \\ \texttt{\color{blue} git reset [file]
 
 Revert everything to the last commit \\ \texttt{\color{blue} git reset --hard}
 
-\section{Synchronise}
-Get the latest changes from origin
-(no merge) \\ \texttt{\color{blue} git fetch}
 
-Fetch the latest changes from origin
-and merge \\ \texttt{\color{blue} git pull}
 
-Fetch the latest changes from origin
-and rebase \\ \texttt{\color{blue} git pull --rebase}
+Fetch the latest changes from origin and rebase
+git pull --rebase
 
 Push local changes to the origin \\ \texttt{\color{blue} git push}
 
 \section{Finally!}
 When in doubt, use git help \\ \texttt{\color{blue} git command --help}
 
-Or visit \url{https://training.github.com/} for official GitHub training\section{Working with Branches}
-List all local branches \\ \texttt{\color{blue} git branch}
 
-List all branches, local and remote \\ \texttt{\color{blue} git branch -av}
+List all branches, local and remote
+git branch -av
 
 Switch to a branch and update working directory \\ \texttt{\color{blue} git checkout mybranch}
 
@@ -128,22 +117,12 @@ Tag the current commit \\ \texttt{\color{blue} git tag mytag}
 
 
 
-Unstages file, keeping the file changes \\ \texttt{\color{blue} git reset [file]}
+Unstages file, keeping the file changes
+git reset [file]
 
-Revert everything to the last commit \\ \texttt{\color{blue} git reset --hard}
+Revert everything to the last commit
+git reset --hard
 
-\section{Synchronise}
-Get the latest changes from origin
-(no merge) \\ \texttt{\color{blue} git fetch}
-
-Fetch the latest changes from origin
-and merge \\ \texttt{\color{blue} git pull}
 
 Fetch the latest changes from origin
 and rebase \\ \texttt{\color{blue} git pull --rebase}
-
-Push local changes to the origin \\ \texttt{\color{blue} git push}
-
-\section{Finally!}
-When in doubt, use git help \\ \texttt{\color{blue} git command --help}
-

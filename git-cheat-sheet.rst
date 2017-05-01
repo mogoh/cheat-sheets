@@ -4,9 +4,7 @@
 
 Install Git
 --------------------------------------------------------------------------------
-Git for All Platforms
-
-https://git-scm.com
+Git can be downloaded from [git-scm.com](https://git-scm.com).
 
 Configure Tooling
 --------------------------------------------------------------------------------
@@ -209,7 +207,7 @@ Synchronize Changes
 -------------------
 Register a repository bookmark and exchange version history
 
-Downloads all history from the repository bookmark
+Download all history from the repository [bookmark]. [bookmark] is usually “origin” and can be omitted. This does not merge.
 
 ``git fetch [bookmark]``
 
@@ -231,6 +229,16 @@ Miscellaneous
 Time to go home. Just push everything. What could go wrong?
 
 ``alias gityolo='git add . && git commit -m "`fortune`" && git push'``
+
+Getting Help
+--------------------------------------------------------------------------------
+
+Getting quick help to a specific command.
+
+``git [command] --help``
+
+Read the offical documentation at [git-scm.com/docs](https://git-scm.com/docs).
+
 
 About
 --------------------------------------------------------------------------------

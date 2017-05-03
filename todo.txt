@@ -1,22 +1,8 @@
-??????????????????????????????????????
-# Unodes all commits after HEAD@{index}
-git reset HEAD@{index}
-# Move the last commit from the [wrong-branch] to [correct-branch]
+## pull/fetch/rebase
+git rebase origin/master
 
-
-# fixing fatal: Could not parse object after unsuccessful revert
-git revert --quit
-
-??????????
 pulling for fast-forward only (eliminating a chance for unintended merging)
 git pull --ff-only
-
-
-??????????????????????????????????????
-Fetch the latest changes from origin and rebase
-git pull --rebase
-
-git rebase origin/master
 
 
 ## reset some stuff
@@ -36,9 +22,12 @@ git reset [file]
 Revert everything to the last commit
 git reset --hard
 
+Unodes all commits after HEAD@{index}
+git reset HEAD@{index}
 
-Fetch the latest changes from origin
-and rebase \\ \texttt{\color{blue} git pull --rebase}
+fixing fatal: Could not parse object after unsuccessful revert
+git revert --quit
+
 
 ## Branches
 List all branches, local and remote
@@ -84,3 +73,9 @@ branches git branch -r
 Tag the current commit
 git tag mytag
 
+
+
+###
+* https://www.reddit.com/r/programming/comments/5uj9kc/git_cheat_sheet/
+* http://ohshitgit.com/
+* https://zeroturnaround.com/rebellabs/git-commands-and-best-practices-cheat-sheet/

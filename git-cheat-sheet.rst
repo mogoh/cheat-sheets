@@ -212,24 +212,28 @@ Download all history from the repository [bookmark]. [bookmark] is usually “or
 
 ``git fetch [bookmark]``
 
-Combines bookmarks branch into current local branch
+Combine [bookmark] branch into current local branch
 
 ``git merge [bookmark]/[branch]``
 
-Uploads all local branch commits to GitHub
+Upload [branch] commits to the remote repository.
 
-``git push [alias] [branch]``
+``git push [bookmark] [branch]``
 
-Downloads bookmark history and incorporates changes
+Download bookmarks history and incorporates changes.
 
 ``git pull``
+
+Download bookmakrs history and rebase history, thus a merge is not shown.
+
+``git pull --rebase``
 
 Miscellaneous
 --------------------------------------------------------------------------------
 
 Time to go home. Just push everything. What could go wrong?
 
-``alias gityolo='git add . && git commit -m "`fortune`" && git push'``
+``alias git-fortune='git add . && git commit -m "`fortune`" && git push'``
 
 Getting Help
 --------------------------------------------------------------------------------

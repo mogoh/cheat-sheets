@@ -155,9 +155,9 @@ Changes the file name and prepares it for commit
 
 Suppress Tracking
 --------------------------------------------------------------------------------
-Exclude temporary files and paths
+Exclude temporary files and paths. A text file named ``.gitignore`` suppresses accidental versioning of files and paths matching the specified patterns.
 
-``.gitignore``::
+Example ``.gitignore``::
 
   # This is a comment
   *.log
@@ -166,11 +166,12 @@ Exclude temporary files and paths
   /rootdir/     # Only the 'rootdir' in the root of the 
                 # git repository
 
-A text file named ``.gitignore`` suppresses accidental versioning of files and paths matching the specified patterns
 
 Lists all ignored files in this project
 
 ``git ls-files --other --ignored --exclude-standard``
+
+Generate a ``.gitignore`` for your needs at `gitignore.io`_.
 
 Save Fragments
 --------------------------------------------------------------------------------
@@ -263,3 +264,4 @@ This Cheat Sheet is based on:
 .. _git-scm.com/docs: https://git-scm.com/docs
 .. _git-scm.com: https://git-scm.com
 .. _Pro Git: https://git-scm.com/book/en/v2
+.. _gitignore.io: https://www.gitignore.io/

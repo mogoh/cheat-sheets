@@ -224,9 +224,13 @@ Download bookmarks history and incorporates changes.
 
 ``git pull``
 
-Download bookmakrs history and rebase history, thus a merge is not shown.
+Download bookmarks history and rebase history, thus a merge is not shown.
 
 ``git pull --rebase``
+
+
+Pull for fast-forward only (eliminating a chance for unintended merging).
+``git pull --ff-only``
 
 Miscellaneous
 --------------------------------------------------------------------------------

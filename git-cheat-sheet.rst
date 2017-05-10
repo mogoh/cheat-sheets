@@ -117,25 +117,26 @@ Branches
 --------------------------------------------------------------------------------
 Name a series of commits and combine completed efforts.
 
-Lists all local branches in the current repository
+Lists all branches, local and remote
 
-``git branch``
+``git branch -av``
 
 Creates a new branch
 
-``git branch [branch-name]``
+``git branch [branch]``
 
 Switches to the specified branch and updates the working directory
 
-``git checkout [branch-name]``
+``git checkout [branch]``
 
-Combines the specified branchs history into the current branch
+Delete the specified local branch
 
-``git merge [branch]``
+``git branch -d [branch]``
 
-Deletes the specified branch
+Delte the specified remote branch
 
-``git branch -d [branch-name]``
+``git push [origin] --delete [branch]``
+
 
 Refactor Filenames
 --------------------------------------------------------------------------------
@@ -232,6 +233,31 @@ Download bookmarks history and rebase history, thus a merge is not shown.
 
 Pull for fast-forward only (eliminating a chance for unintended merging).
 ``git pull --ff-only``
+
+Tagging
+--------------------------------------------------------------------------------
+List all tags
+``git tag``
+
+Create an annotated tag, which is the prefered kind.
+
+``git tag -a [mytag]``
+
+Tag an old commit
+
+``git tag -a [mytag] [checksum (or part of it)]``
+
+Tags must be pushed explicit
+
+``git push [origin] [mytag]``
+
+Push all tags
+
+``git push [origin] --tags``
+
+To checkout a tag, check it out in a new branch
+
+``git checkout -b [mytag] [mytag]``
 
 Miscellaneous
 --------------------------------------------------------------------------------

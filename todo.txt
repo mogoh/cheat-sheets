@@ -23,49 +23,15 @@ git revert --quit
 
 
 ## Branches
-List all branches, local and remote
-git branch -av
-
-git push origin :REMOTE_BRANCH_TO_DELETE
-
-Delete the branch called mybranch
-git branch -d mybranch
-
-git branch -D LOCAL_BRANCH_TO_DELETE
-
-Merge brancha into branchb
-git checkout branchb
-git merge brancha
-
-git cherry-pick [wrong-branch]
-# Get the commit from the [wrong-branch]; Only nessesarry if [correct-branch] is not new
-
-
-list all local branches git branch -l
 
 find to which branch a given commit belongs
 git branch --contains <COMMIT>
-
-List all branches, local and remote
-git branch -av
-
-deleting remote branch localy
-git branch -r -D <BRANCH_NAME> or to sync with the remote git fetch --all --prune
-deleting local branch
-git branch -d <BRANCH_NAME>
 
 list actual remote branchs
 git ls-remote --heads origin
 
 list all remote (fetched)
 branches git branch -r
-
-
-
-### TAGS 
-Tag the current commit
-git tag mytag
-
 
 
 ###

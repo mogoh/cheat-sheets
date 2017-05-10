@@ -13,7 +13,7 @@ Rendering
 ---------
 run
 
-``./render.sh``
+``./render``
 
 or:
 

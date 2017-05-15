@@ -76,14 +76,14 @@ List every thing you've done yet across all branches
 ``git reflog``
 
 List the change dates and authors for a file
-``git blame [file]``
 
+``git blame [file]``
 
 List all developers
 
 ``git shortlog -s -n -e``
 
-Display a graph of branches 
+Display a graph of branches
 
 ``git log --decorate --graph --all --date=relative``
 
@@ -121,13 +121,17 @@ Lists all branches, local and remote
 
 ``git branch -av``
 
-Creates a new branch
+Create a new branch
 
 ``git branch [branch]``
 
-Switches to the specified branch and updates the working directory
+Switch to the specified branch and update the working directory
 
 ``git checkout [branch]``
+
+Create and checkout a new branch in one step
+
+``git checkout -b [branch]``
 
 Delete the specified local branch
 

@@ -61,7 +61,7 @@ Show the changes between ``[a]`` and ``[b]``, where [a] and [b] can be branches 
 
 Lists version history for the current branch
 
-``git log``
+``git log --pretty=oneline``
 
 Lists version history for a file, including renames
 
@@ -71,7 +71,7 @@ Output metadata and content changes of the specified [commit] (and [file])
 
 ``git show [commit](:[file])``
 
-List every thing you've done yet across all branches
+List every change of HEAD across all branches
 
 ``git reflog``
 
@@ -198,17 +198,27 @@ Discards the most recently stashed changeset
 
 ``git stash drop``
 
-Redo Commits
+Revert Changes
 --------------------------------------------------------------------------------
-Erase mistakes and craftreplacement history
+Erase mistakes and craft replacement history
 
-Undoes all commits after ``[commit]``, preserving changes locally
+Undo all commits after ``[commit]``, preserving changes locally
 
 ``git reset [commit]``
 
-Discards all history and changes back to the specified commit
+Discard all history and changes back to the specified commit
 
 ``git reset --hard [commit]``
+
+Find the point you want to revert to and revert to it. This is Gits magic time machine.
+
+``git reflog``
+
+``git reset HEAD@{[index]}``
+
+Discard all unstaged changes. 
+
+``git checkout -- .``
 
 Synchronize Changes
 -------------------

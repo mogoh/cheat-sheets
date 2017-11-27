@@ -228,14 +228,6 @@ Download all history from the repository [bookmark]. [bookmark] is usually “or
 
 ``git fetch [bookmark]``
 
-Combine [bookmark] branch into current local branch
-
-``git merge [bookmark]/[branch]``
-
-Upload [branch] commits to the remote repository.
-
-``git push [bookmark] [branch]``
-
 Download bookmarks history and incorporates changes.
 
 ``git pull``
@@ -244,13 +236,26 @@ Download bookmarks history and rebase history, thus a merge is not shown.
 
 ``git pull --rebase``
 
-
 Pull for fast-forward only (eliminating a chance for unintended merging).
+
 ``git pull --ff-only``
+
+Combine [bookmark] branch into current local branch
+
+``git merge [bookmark]/[branch]``
+
+Upload [branch] commits to the remote repository.
+
+``git push [bookmark] [branch]``
+
+Upload a new branch.
+
+``git push --set-upstream [bookmark] [branch]``
 
 Tagging
 --------------------------------------------------------------------------------
 List all tags
+
 ``git tag``
 
 Create an annotated tag, which is the prefered kind.
@@ -272,6 +277,10 @@ Push all tags
 To checkout a tag, check it out in a new branch
 
 ``git checkout -b [mytag] [mytag]``
+
+Delete an existing tag.
+
+``git tag -d [mytag]``
 
 Miscellaneous
 --------------------------------------------------------------------------------

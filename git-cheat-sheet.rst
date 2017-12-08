@@ -289,6 +289,12 @@ Time to go home. Just push everything. What could go wrong?
 
 ``alias git-fortune='git add . && git commit -m "`fortune`" && git push'``
 
+I worked on the wrong branch but have not commited yet. How can I move my work to the right branch?
+
+| ``git stash``
+| ``git checkout [ranch]``
+| ``git stash apply``
+
 Getting Help
 --------------------------------------------------------------------------------
 

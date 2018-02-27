@@ -315,6 +315,7 @@ This Cheat Sheet is based on:
 * https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
 * http://ohshitgit.com/
 * https://zeroturnaround.com/rebellabs/git-commands-and-best-practices-cheat-sheet/
+* https://gist.github.com/eashish93/3eca6a90fef1ea6e586b7ec211ff72a5
 
 .. _git-scm.com/docs: https://git-scm.com/docs
 .. _git-scm.com: https://git-scm.com
